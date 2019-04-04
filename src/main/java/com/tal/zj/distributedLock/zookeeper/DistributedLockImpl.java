@@ -94,7 +94,7 @@ public class DistributedLockImpl implements DistributedLock {
         cleanup();
     }
 
-    private void prepare() throws Exception {
+    private synchronized void prepare() throws Exception {
         //确保父节点被创建
         Stat exists = client.get().exists(lockPath, false);
         if (exists == null) {

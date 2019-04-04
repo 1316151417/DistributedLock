@@ -34,7 +34,7 @@ public class ZookeeperClient {
         private long sessionId;
         private byte[] sessionPassword;
     }
-    private SessionState sessionState;
+    private volatile SessionState sessionState;
 
     private volatile ZooKeeper zooKeeper;
 
